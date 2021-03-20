@@ -30,7 +30,7 @@ public class App
 //Example: Loosely Coupled Class
   //IOC:: Inversion Of Control => Dependency Injection is a pattern we can use to implement IOC 
     	
-//First Way: Application Context Container Type
+//First Way: Application Context Container Type => load all bean object at startup (eager load)
     	
 //    	ApplicationContext context = new ClassPathXmlApplicationContext("appContext.xml");
 //    	Employee emp1 = (Employee) context.getBean("emp1");
@@ -40,7 +40,8 @@ public class App
 //    	System.out.println(emp2);
     	
     	
-//Second Way: Bean Factory Container Type
+//Second Way: Bean Factory Container Type=> Load object on demand (lazy load)
+    	
     Resource resource  = new ClassPathResource("appContext.xml");
     BeanFactory factory = new XmlBeanFactory(resource);
     
